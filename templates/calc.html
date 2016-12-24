@@ -1,0 +1,12 @@
+<html>
+<body>
+<h3 style="font-size: 15;font-family: sans-serif">Calculate</h3>
+<form action="/calc" method="POST" enctype="multipart/form-data">
+{{form.csrf_token}}
+<p style="font-size: 15;font-family: sans-serif">Enter expression (e.g. A*B+C):</p>
+{{form.expr}}
+<input type="submit" value="Calculate" style="font-size: 13;font-family: sans-serif;border: 2px solid green;">
+</form>
+<p style="font-size: 15;font-family: sans-serif">{{result}}</p>
+</body>
+</html>

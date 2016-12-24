@@ -1,0 +1,55 @@
+<html>
+  <head>
+  <title>Web CSV v0.1</title>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+  <script type=text/javascript>
+  function load(obj){
+      $('#window').html('<iframe src="'+obj+'" height=300></iframe>');
+  }
+  function reload(){
+  $( '#table' ).load('table');
+  $.getJSON( "/info.json", function( data ) {
+     $('#len').html('Size: ' + data['len']);
+     $('#cols').html('Columns: ' + data['cols'] + ' ');
+     $('#rows').html('Rows: ' + data['rows']);
+ 
+  });
+  }
+  reload();
+  setInterval('reload()', 2000);
+  </script>
+  <style>
+  .btn{
+  border: 2px solid green;
+  text-decoration:none;
+  color: black;
+  padding: 5px;
+  font-family: sans-serif;
+  font-size: 10;
+  }
+  
+  .main_table{
+  border: 1px solid black;
+  width: 100%;
+  }
+  </style>
+  </head>
+  <body>
+     <div><p><span id="len">Size: 0</span> <span id="cols">Columns: 0</span><span id="rows">Rows: 0</span></p></div>
+     <table border=0>
+     <tr>
+        <td>
+           <div style="width:800;height:800;border: 2px solid green" id="table"></div>
+        </td>
+        <td>
+           <div id="toolbar">
+           <p><a class="btn" href="javascript: load('upload');">Import</a> - <a class="btn" href="/export.csv" rel="nofollow">Export</a> - <a class="btn" href="javascript: load('calc');" >Calculate</a> - <a class="btn" href="javascript: load('delete');" >Delete</a></p>
+           <div id="window">
+           <iframe src="upload" height=300></iframe>
+           </div>
+           </div>
+        </td>
+     </tr>
+     </table>
+  </body>
+</html>

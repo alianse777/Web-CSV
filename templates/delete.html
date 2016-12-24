@@ -1,0 +1,11 @@
+<html>
+   <body>
+   <h3 style="font-size: 15;font-family: sans-serif">Column to delete: </h3>
+   <form action="/delete" method="POST">
+   {{form.csrf_token}}
+   {{form.col}}
+   <input type="submit" value="Delete" style="font-size: 13;font-family: sans-serif;border: 2px solid green;">
+   </form>
+   <p style="font-size: 10;font-family: sans-serif">{{result}}</p>
+   </body>
+</html>

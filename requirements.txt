@@ -1,0 +1,3 @@
+flask==0.11
+pandas
+flask_wtf

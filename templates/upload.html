@@ -1,0 +1,13 @@
+<html>
+<body>
+<h3 style="font-size: 15;font-family: sans-serif">Upoad CSV file</h3>
+<form action="/upload" method="POST" enctype="multipart/form-data">
+{{form.csrf_token}}
+{{form.csvf}}
+<p style="font-size: 13;font-family: sans-serif">Rewrite? {{form.rewrite}}</p>
+<p style="font-size: 13;font-family: sans-serif;">Append columns? {{form.join_cols}}</p>
+<input type="submit" value="Upload" style="font-size: 13;font-family: sans-serif;border: 2px solid green;">
+</form>
+<p style="font-size: 10;font-family: sans-serif">{{filename}}</p>
+</body>
+</html>
